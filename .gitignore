@@ -3,3 +3,9 @@ node_modules/
 
 # Ignore .DS_Store files (macOS)
 .DS_Store
+
+# Ignore package-lock.json (npm v5+)
+package-lock.json
+
+# Ignore the .vscode directory (used by Visual Studio Code)
+.vscode/
