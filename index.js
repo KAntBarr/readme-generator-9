@@ -23,22 +23,23 @@ function writeToFile(fileName, data) {
 function formatData(data) {
 
     const formattedString =
-`#Title
-##Description
+`# Title
 
-##Table of Contents
+## Description
 
-##Installation
+## Table of Contents
 
-##Usage
+## Installation
 
-##License
+## Usage
 
-##Contributing
+## License
 
-##Tests
+## Contributing
 
-##Questions
+## Tests
+
+## Questions
 `;
 
     // return JSON.stringify(data);
