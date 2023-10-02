@@ -21,7 +21,28 @@ function writeToFile(fileName, data) {
 }
 
 function formatData(data) {
-    return JSON.stringify(data);
+
+    const formattedString =
+`#Title
+##Description
+
+##Table of Contents
+
+##Installation
+
+##Usage
+
+##License
+
+##Contributing
+
+##Tests
+
+##Questions
+`;
+
+    // return JSON.stringify(data);
+    return formattedString;
 }
 
 // TODO: Create a function to initialize app
