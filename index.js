@@ -9,46 +9,55 @@ const questions = [
         type: 'input',
         message: 'What is the title of your project/application?',
         name: 'title',
+        default: "Default Title"
     },
     {
         type: 'input',
         message: 'Give a quick description of what the app is for.',
         name: 'description',
+        default: "Default description"
     },
     {
         type: 'input',
         message: 'List Table of Contents:',
         name: 'contents',
+        default: "Default contents"
     },
     {
         type: 'input',
         message: 'How do you install this app?',
         name: 'installation',
+        default: "Default installation"
     },
     {
         type: 'input',
         message: 'How do you use this app?',
         name: 'usage',
+        default: "Default usage"
     },
     {
         type: 'input',
         message: 'Choose a license for your app:',
         name: 'license',
+        default: "Default license"
     },
     {
         type: 'input',
         message: 'How would a fan contribute to this project?',
         name: 'contribute',
+        default: "Default contribute"
     },
     {
         type: 'input',
         message: 'What tests have been done?',
         name: 'tests',
+        default: "Default tests"
     },
     {
         type: 'input',
         message: 'Any questions?',
         name: 'questions',
+        default: "Default questions"
     },
 ];
 
@@ -75,35 +84,33 @@ function formatData(data) {
         questions
     } = data;
 
-    title = title.length == 0 ? "Default Title" : title;
-    description = description.length == 0 ? "Default description" : description;
-    contents = contents.length == 0 ? "Default contents" : contents;
-    installation = installation.length == 0 ? "Default installation" : installation;
-    usage = usage.length == 0 ? "Default usage" : usage;
-    license = license.length == 0 ? "Default license" : license;
-    contribute = contribute.length == 0 ? "Default contribute" : contribute;
-    tests = tests.length == 0 ? "Default tests" : tests;
-    questions = questions.length == 0 ? "Default questions" : questions;
-
     const formattedString =
         `# ${title}
 
 ## Description
 ${description}
+
 ## Table of Contents
 ${contents}
+
 ## Installation
 ${installation}
+
 ## Usage
 ${usage}
+
 ## License
 ${license}
+
 ## Contributing
 ${contribute}
+
 ## Tests
 ${tests}
+
 ## Questions
 ${questions}
+
 `;
 
     // return JSON.stringify(data);
@@ -114,10 +121,7 @@ ${questions}
 function init() {
     inquirer.prompt(questions)
         .then((response) => {
-            console.log("test24");
             const formattedData = formatData(response);
-
-            console.log(formattedData, "---------");
             writeToFile("README.md", formattedData);
         })
         .catch((err) => {
