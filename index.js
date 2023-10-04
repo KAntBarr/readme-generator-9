@@ -19,12 +19,6 @@ const questions = [
     },
     {
         type: 'input',
-        message: 'List Table of Contents:',
-        name: 'contents',
-        default: "Default contents"
-    },
-    {
-        type: 'input',
         message: 'How do you install this app?',
         name: 'installation',
         default: "Default installation"
@@ -36,10 +30,49 @@ const questions = [
         default: "Default usage"
     },
     {
-        type: 'input',
+        type: 'list',
         message: 'Choose a license for your app:',
         name: 'license',
-        default: "Default license"
+        default: "None",
+        choices: [
+            "None",
+            "Academic Free License v3.0",
+            "Apache license 2.0",
+            "Artistic license 2.0",
+            "Boost Software License 1.0",
+            "BSD 2-clause \"Simplified\" license",
+            "BSD 3-clause \"New\" or \"Revised\" license",
+            "BSD 3-clause Clear license",
+            "BSD 4-clause \"Original\" or \"Old\" license",
+            "BSD Zero-Clause license",
+            "Creative Commons license family",
+            "Creative Commons Zero v1.0 Universal",
+            "Creative Commons Attribution 4.0",
+            "Creative Commons Attribution ShareAlike 4.0",
+            "Do What The F*ck You Want To Public License",
+            "Educational Community License v2.0",
+            "Eclipse Public License 1.0",
+            "Eclipse Public License 2.0",
+            "European Union Public License 1.1",
+            "GNU Affero General Public License v3.0",
+            "GNU General Public License family",
+            "GNU General Public License v2.0",
+            "GNU General Public License v3.0",
+            "GNU Lesser General Public License family",
+            "GNU Lesser General Public License v2.1",
+            "GNU Lesser General Public License v3.0",
+            "ISC",
+            "LaTeX Project Public License v1.3c",
+            "Microsoft Public License",
+            "MIT",
+            "Mozilla Public License 2.0",
+            "Open Software License 3.0",
+            "PostgreSQL License",
+            "SIL Open Font License 1.1",
+            "University of Illinois/NCSA Open Source License",
+            "The Unlicense",
+            "zLib License"
+        ]
     },
     {
         type: 'input',
@@ -49,15 +82,21 @@ const questions = [
     },
     {
         type: 'input',
-        message: 'What tests have been done?',
+        message: 'What are the test instructions?',
         name: 'tests',
         default: "Default tests"
     },
     {
         type: 'input',
-        message: 'Any questions?',
-        name: 'questions',
-        default: "Default questions"
+        message: 'What is your Github username?',
+        name: 'username',
+        default: "JohnDoe69"
+    },
+    {
+        type: 'input',
+        message: 'What is your email?',
+        name: 'email',
+        default: "john.doe69@aol.com"
     },
 ];
 
@@ -71,17 +110,17 @@ function writeToFile(fileName, data) {
 
 function formatData(data) {
 
-    console.log(data, "---");
+    console.log(data);
     let {
         title,
         description,
-        contents,
         installation,
         usage,
         license,
         contribute,
         tests,
-        questions
+        username,
+        email
     } = data;
 
     const formattedString =
@@ -91,7 +130,14 @@ function formatData(data) {
 ${description}
 
 ## Table of Contents
-${contents}
+Description
+Table of Contents
+Installation
+Usage
+License
+Contributing
+Tests
+Questions
 
 ## Installation
 ${installation}
@@ -109,8 +155,8 @@ ${contribute}
 ${tests}
 
 ## Questions
-${questions}
-
+Github Username: ${username} - https://github.com/${username}\n
+Reach Me: ${email}
 `;
 
     // return JSON.stringify(data);

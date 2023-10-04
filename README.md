@@ -1,19 +1,26 @@
 # readme-generator-9
 
 ## Description
-The purpose of this application is to help streamline the process of creating a readme file. 
+The purpose of this application is to help streamline the process of creating a readme file.
 
 ## Table of Contents
-Default contents
+Description
+Table of Contents
+Installation
+Usage
+License
+Contributing
+Tests
+Questions
 
 ## Installation
-Clone the repositiory from here *github link*.
+Clone the repositiory from here https://github.com/KAntBarr/readme-generator-9.
 
 ## Usage
 Simply go into the folder that contains the index.js file, run node ./node index.js, and answer a series of questions about your project. A README file will be genereated upon completion.
 
 ## License
-MIT
+None
 
 ## Contributing
 Pick an open issue to solve, fork the respository, fix the issue with the forked repository, then do a pull request with the original repository. Or donate to our cause.
@@ -22,5 +29,6 @@ Pick an open issue to solve, fork the respository, fix the issue with the forked
 Default tests
 
 ## Questions
-Default questions
+Github Username: KAntBarr - https://github.com/KAntBarr
 
+Reach Me: kobybarr.dev@gmail.com
