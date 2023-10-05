@@ -15,19 +15,25 @@ const questions = [
         type: 'input',
         message: 'Give a quick description of what the app is for.',
         name: 'description',
-        default: "Default description"
+        default: "N/A"
     },
     {
         type: 'input',
         message: 'How do you install this app?',
         name: 'installation',
-        default: "Default installation"
+        default: "N/A"
     },
     {
         type: 'input',
         message: 'How do you use this app?',
         name: 'usage',
-        default: "Default usage"
+        default: "N/A"
+    },
+    {
+        type: 'input',
+        message: 'Give credit to sources/collaborations.',
+        name: 'credits',
+        default: "N/A"
     },
     {
         type: 'list',
@@ -84,7 +90,7 @@ const questions = [
         type: 'input',
         message: 'How would a fan contribute to this project?',
         name: 'contribute',
-        default: "Donate money to any charity."
+        default: "N/A"
     },
     {
         type: 'input',
@@ -96,53 +102,53 @@ const questions = [
         type: 'input',
         message: 'What is your Github username?',
         name: 'username',
-        default: "JohnDoe69"
+        default: "JohnDoe"
     },
     {
         type: 'input',
         message: 'What is your email?',
         name: 'email',
-        default: "john.doe69@aol.com"
+        default: "john.doe@aol.com"
     },
 ];
 
 const licenses = {
-    "Academic Free License v3.0": { 'badge': "AFL-3.0", 'url': "" },
-    "Apache license 2.0": { 'badge': "Apache-2.0", 'url': "" },
-    "Artistic license 2.0": { 'badge': "Artistic-2.0", 'url': "" },
-    "Boost Software License 1.0": { 'badge': "BSL-1.0", 'url': "" },
-    "BSD 2-clause \"Simplified\" license": { 'badge': "BSD-2-Clause", 'url': "" },
-    "BSD 3-clause \"New\" or \"Revised\" license": { 'badge': "BSD-3-Clause", 'url': "" },
-    "BSD 3-clause Clear license": { 'badge': "BSD-3-Clause-Clear", 'url': "" },
-    "BSD 4-clause \"Original\" or \"Old\" license": { 'badge': "BSD-4-Clause", 'url': "" },
-    "BSD Zero-Clause license": { 'badge': "0BSD", 'url': "" },
-    "Creative Commons license family": { 'badge': "CC", 'url': "" },
-    "Creative Commons Zero v1.0 Universal": { 'badge': "CC0-1.0", 'url': "" },
-    "Creative Commons Attribution 4.0": { 'badge': "CC-BY-4.0", 'url': "" },
-    "Creative Commons Attribution ShareAlike 4.0": { 'badge': "CC-BY-SA-4.0", 'url': "" },
-    "Do What The F*ck You Want To Public License": { 'badge': "WTFPL", 'url': "" },
-    "Educational Community License v2.0": { 'badge': "ECL-2.0", 'url': "" },
-    "Eclipse Public License 1.0": { 'badge': "EPL-1.0", 'url': "" },
-    "Eclipse Public License 2.0": { 'badge': "EPL-2.0", 'url': "" },
-    "European Union Public License 1.1": { 'badge': "EUPL-1.1", 'url': "" },
-    "GNU Affero General Public License v3.0": { 'badge': "AGPL-3.0", 'url': "" },
-    "GNU General Public License family": { 'badge': "GPL", 'url': "" },
-    "GNU General Public License v2.0": { 'badge': "GPL-2.0", 'url': "" },
-    "GNU General Public License v3.0": { 'badge': "GPL-3.0", 'url': "" },
-    "GNU Lesser General Public License family": { 'badge': "LGPL", 'url': "" },
-    "GNU Lesser General Public License v2.1": { 'badge': "LGPL-2.1", 'url': "" },
-    "GNU Lesser General Public License v3.0": { 'badge': "LGPL-3.0", 'url': "" },
-    "ISC": { 'badge': "ISC", 'url': "" },
-    "LaTeX Project Public License v1.3c": { 'badge': "LPPL-1.3c", 'url': "" },
-    "Microsoft Public License": { 'badge': "MS-PL", 'url': "" },
-    "MIT": { 'badge': "MIT", 'url': "" },
-    "Mozilla Public License 2.0": { 'badge': "MPL-2.0", 'url': "" },
-    "Open Software License 3.0": { 'badge': "OSL-3.0", 'url': "" },
-    "PostgreSQL License": { 'badge': "PostgreSQL", 'url': "" },
-    "SIL Open Font License 1.1": { 'badge': "OFL-1.1", 'url': "" },
-    "University of Illinois/NCSA Open Source License": { 'badge': "NCSA", 'url': "" },
-    "The Unlicense": { 'badge': "Unlicense", 'url': "" },
-    "zLib License": { 'badge': "Zlib", 'url': "" },
+    "Academic Free License v3.0": { 'badge': "AFL-3.0", 'url': "No badge data for this license." },
+    "Apache license 2.0": { 'badge': "Apache-2.0", 'url': "[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)" },
+    "Artistic license 2.0": { 'badge': "Artistic-2.0", 'url': "[![License: Artistic-2.0](https://img.shields.io/badge/License-Artistic_2.0-0298c3.svg)](https://opensource.org/licenses/Artistic-2.0)" },
+    "Boost Software License 1.0": { 'badge': "BSL-1.0", 'url': "[![License](https://img.shields.io/badge/License-Boost_1.0-lightblue.svg)](https://www.boost.org/LICENSE_1_0.txt)" },
+    "BSD 2-clause \"Simplified\" license": { 'badge': "BSD-2-Clause", 'url': "[![License](https://img.shields.io/badge/License-BSD_2--Clause-orange.svg)](https://opensource.org/licenses/BSD-2-Clause)" },
+    "BSD 3-clause \"New\" or \"Revised\" license": { 'badge': "BSD-3-Clause", 'url': "[![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)" },
+    "BSD 3-clause Clear license": { 'badge': "BSD-3-Clause-Clear", 'url': "No badge data for this license." },
+    "BSD 4-clause \"Original\" or \"Old\" license": { 'badge': "BSD-4-Clause", 'url': "No badge data for this license." },
+    "BSD Zero-Clause license": { 'badge': "0BSD", 'url': "No badge data for this license." },
+    "Creative Commons license family": { 'badge': "CC", 'url': "No badge data for this license." },
+    "Creative Commons Zero v1.0 Universal": { 'badge': "CC0-1.0", 'url': "[![License: CC0-1.0](https://img.shields.io/badge/License-CC0_1.0-lightgrey.svg)](http://creativecommons.org/publicdomain/zero/1.0/)" },
+    "Creative Commons Attribution 4.0": { 'badge': "CC-BY-4.0", 'url': "[![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)" },
+    "Creative Commons Attribution ShareAlike 4.0": { 'badge': "CC-BY-SA-4.0", 'url': "[![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC_BY--SA_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/)" },
+    "Do What The F*ck You Want To Public License": { 'badge': "WTFPL", 'url': "[![License: WTFPL](https://img.shields.io/badge/License-WTFPL-brightgreen.svg)](http://www.wtfpl.net/about/)" },
+    "Educational Community License v2.0": { 'badge': "ECL-2.0", 'url': "No badge data for this license." },
+    "Eclipse Public License 1.0": { 'badge': "EPL-1.0", 'url': "[![License](https://img.shields.io/badge/License-EPL_1.0-red.svg)](https://opensource.org/licenses/EPL-1.0)" },
+    "Eclipse Public License 2.0": { 'badge': "EPL-2.0", 'url': "No badge data for this license." },
+    "European Union Public License 1.1": { 'badge': "EUPL-1.1", 'url': "No badge data for this license." },
+    "GNU Affero General Public License v3.0": { 'badge': "AGPL-3.0", 'url': "No badge data for this license." },
+    "GNU General Public License family": { 'badge': "GPL", 'url': "No badge data for this license." },
+    "GNU General Public License v2.0": { 'badge': "GPL-2.0", 'url': "[![License: GPL v2](https://img.shields.io/badge/License-GPL_v2-blue.svg)](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)" },
+    "GNU General Public License v3.0": { 'badge': "GPL-3.0", 'url': "[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)" },
+    "GNU Lesser General Public License family": { 'badge': "LGPL", 'url': "No badge data for this license." },
+    "GNU Lesser General Public License v2.1": { 'badge': "LGPL-2.1", 'url': "No badge data for this license." },
+    "GNU Lesser General Public License v3.0": { 'badge': "LGPL-3.0", 'url': "[![License: LGPL v3](https://img.shields.io/badge/License-LGPL_v3-blue.svg)](https://www.gnu.org/licenses/lgpl-3.0)" },
+    "ISC": { 'badge': "ISC", 'url': "[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)" },
+    "LaTeX Project Public License v1.3c": { 'badge': "LPPL-1.3c", 'url': "No badge data for this license." },
+    "Microsoft Public License": { 'badge': "MS-PL", 'url': "No badge data for this license." },
+    "MIT": { 'badge': "MIT", 'url': "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)" },
+    "Mozilla Public License 2.0": { 'badge': "MPL-2.0", 'url': "[![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)" },
+    "Open Software License 3.0": { 'badge': "OSL-3.0", 'url': "No badge data for this license." },
+    "PostgreSQL License": { 'badge': "PostgreSQL", 'url': "No badge data for this license." },
+    "SIL Open Font License 1.1": { 'badge': "OFL-1.1", 'url': "[![License: Open Font-1.1](https://img.shields.io/badge/License-OFL_1.1-lightgreen.svg)](https://opensource.org/licenses/OFL-1.1)" },
+    "University of Illinois/NCSA Open Source License": { 'badge': "NCSA", 'url': "No badge data for this license." },
+    "The Unlicense": { 'badge': "Unlicense", 'url': "[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)" },
+    "zLib License": { 'badge': "Zlib", 'url': "[![License: Zlib](https://img.shields.io/badge/License-Zlib-lightgrey.svg)](https://opensource.org/licenses/Zlib)" },
 }
 
 // TODO: Create a function to write README file
@@ -161,6 +167,7 @@ function formatData(data) {
         description,
         installation,
         usage,
+        credits,
         license,
         features,
         contribute,
@@ -172,14 +179,16 @@ function formatData(data) {
     let licenseBadge = '';
 
     if (license == "None") {
+        licenseBadge = ``;
         license = "This project has no license.";
     } else {
-        licenseBadge = ``;
+        licenseBadge = `${licenses[license].url}`;
         license = `Licensed under the ${license} license.`;
     }
 
     const formattedString =
         `# ${title}
+${licenseBadge}
 
 ## Description
 ${description}
@@ -187,6 +196,7 @@ ${description}
 ## Table of Contents
 - [Installation](#Installation)
 - [Usage](#Usage)
+- [Credits](#Credits)
 - [License](#License)
 - [Features](#Features)
 - [Contributing](#Contributing)
@@ -198,6 +208,9 @@ ${installation}
 
 ## Usage
 ${usage}
+
+## Credits
+${credits}
 
 ## License
 ${license}
