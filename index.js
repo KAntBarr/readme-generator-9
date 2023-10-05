@@ -3,43 +3,57 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
 
+const defaults = {
+    'title': "Default Title",
+    'description': "N/A",
+    'installation': "N/A",
+    'usage': "N/A",
+    'credits': "N/A",
+    'license': "None",
+    'features': "N/A",
+    'contribute': "N/A",
+    'tests': "N/A",
+    'username': "JohnDoe",
+    'email': "john.doe@aol.com"
+}
+
 // TODO: Create an array of questions for user input
 const questions = [
     {
         type: 'input',
         message: 'What is the title of your project/application?',
         name: 'title',
-        default: "Default Title"
+        default: defaults.title
     },
     {
         type: 'input',
         message: 'Give a quick description of what the app is for.',
         name: 'description',
-        default: "N/A"
+        default: defaults.description
     },
     {
         type: 'input',
         message: 'How do you install this app?',
         name: 'installation',
-        default: "N/A"
+        default: defaults.installation
     },
     {
         type: 'input',
         message: 'How do you use this app?',
         name: 'usage',
-        default: "N/A"
+        default: defaults.usage
     },
     {
         type: 'input',
         message: 'Give credit to sources/collaborations.',
         name: 'credits',
-        default: "N/A"
+        default: defaults.credits
     },
     {
         type: 'list',
         message: 'Choose a license for your app:',
         name: 'license',
-        default: "None",
+        default: defaults.license,
         choices: [
             "None",
             "Academic Free License v3.0",
@@ -84,31 +98,31 @@ const questions = [
         type: 'input',
         message: 'What are some features for this project?',
         name: 'features',
-        default: "N/A"
+        default: defaults.features
     },
     {
         type: 'input',
         message: 'How would a fan contribute to this project?',
         name: 'contribute',
-        default: "N/A"
+        default: defaults.contribute
     },
     {
         type: 'input',
         message: 'What are the test instructions?',
         name: 'tests',
-        default: "N/A"
+        default: defaults.tests
     },
     {
         type: 'input',
         message: 'What is your Github username?',
         name: 'username',
-        default: "JohnDoe"
+        default: defaults.username
     },
     {
         type: 'input',
         message: 'What is your email?',
         name: 'email',
-        default: "john.doe@aol.com"
+        default: defaults.email
     },
 ];
 
@@ -233,12 +247,68 @@ Reach Me: ${email}
     return formattedString;
 }
 
+function checkParams() {
+
+    const parameters = {
+        'toTemp': false,
+        'default': false,
+        'help': false
+    }
+
+    const helpString = `Welcome to the README.md generator.
+    For a simple execution, run 'node .' or 'node index.js' in this directory to begin the process of generating a README.md file.
+    You will be asked a series of questions that will be used to generate the file.
+    The parameters that are current supported are:
+    
+    - h / --help : This parameter will print out directions for how to use the application. This parameter will not generate a README.md and cannot be used with other parameters.
+    -t           : This parameter will write the README file to README_tmp.md instead of the default, README.md. Can be used will other parameters.
+    -d           : This parameter will provide a README file with default sections, skipping over the survey entirely. Can be used will other parameters.
+    `;
+
+    if (process.argv.length > 2) {
+        for (arg of process.argv.slice(2)) {
+            switch (arg) {
+                case '-h':
+                case '--help':
+                    console.log(helpString);
+                    parameters.help = true;
+                    break;
+                case '-t':
+                    parameters.toTemp = true;
+                    break;
+                case '-d':
+                    parameters.default = true;
+                    break;
+                default:
+                    console.log(`${arg} is not supported. Please refer to our parameter options.\n`);
+                    console.log(helpString);
+            }
+        }
+    }
+
+    return parameters;
+
+}
+
 // TODO: Create a function to initialize app
 function init() {
+
+    const parameters = checkParams();
+
+    if (parameters.help) return;
+
+    const writeFile = parameters.toTemp ? "README_tmp.md" : "README.md";
+
+    if (parameters.default) {
+        const formattedData = formatData(defaults);
+        writeToFile(writeFile, formattedData);
+        return;
+    }
+
     inquirer.prompt(questions)
         .then((response) => {
             const formattedData = formatData(response);
-            writeToFile("README.md", formattedData);
+            writeToFile(writeFile, formattedData);
         })
         .catch((err) => {
             console.log(err);
