@@ -255,14 +255,15 @@ function checkParams() {
         'help': false
     }
 
-    const helpString = `Welcome to the README.md generator.
-    For a simple execution, run 'node .' or 'node index.js' in this directory to begin the process of generating a README.md file.
-    You will be asked a series of questions that will be used to generate the file.
-    The parameters that are current supported are:
-    
-    - h / --help : This parameter will print out directions for how to use the application. This parameter will not generate a README.md and cannot be used with other parameters.
-    -t           : This parameter will write the README file to README_tmp.md instead of the default, README.md. Can be used will other parameters.
-    -d           : This parameter will provide a README file with default sections, skipping over the survey entirely. Can be used will other parameters.
+    const helpString = `
+Welcome to the README.md generator.
+For a simple execution, run 'node .' or 'node index.js' in this directory to begin the process of generating a README.md file.
+You will be asked a series of questions that will be used to generate the file.
+The parameters that are current supported are:
+
+- h / --help : This parameter will print out directions for how to use the application. This parameter will not generate a README.md and cannot be used with other parameters.
+-t           : This parameter will write the README file to README_tmp.md instead of the default, README.md. Can be used will other parameters.
+-d           : This parameter will provide a README file with default sections, skipping over the survey entirely. Can be used will other parameters.
     `;
 
     if (process.argv.length > 2) {
