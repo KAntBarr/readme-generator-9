@@ -76,15 +76,21 @@ const questions = [
     },
     {
         type: 'input',
+        message: 'What are some features for this project?',
+        name: 'features',
+        default: "N/A"
+    },
+    {
+        type: 'input',
         message: 'How would a fan contribute to this project?',
         name: 'contribute',
-        default: "Default contribute"
+        default: "Donate money to any charity."
     },
     {
         type: 'input',
         message: 'What are the test instructions?',
         name: 'tests',
-        default: "Default tests"
+        default: "N/A"
     },
     {
         type: 'input',
@@ -99,6 +105,45 @@ const questions = [
         default: "john.doe69@aol.com"
     },
 ];
+
+const licenses = {
+    "Academic Free License v3.0": { 'badge': "AFL-3.0", 'url': "" },
+    "Apache license 2.0": { 'badge': "Apache-2.0", 'url': "" },
+    "Artistic license 2.0": { 'badge': "Artistic-2.0", 'url': "" },
+    "Boost Software License 1.0": { 'badge': "BSL-1.0", 'url': "" },
+    "BSD 2-clause \"Simplified\" license": { 'badge': "BSD-2-Clause", 'url': "" },
+    "BSD 3-clause \"New\" or \"Revised\" license": { 'badge': "BSD-3-Clause", 'url': "" },
+    "BSD 3-clause Clear license": { 'badge': "BSD-3-Clause-Clear", 'url': "" },
+    "BSD 4-clause \"Original\" or \"Old\" license": { 'badge': "BSD-4-Clause", 'url': "" },
+    "BSD Zero-Clause license": { 'badge': "0BSD", 'url': "" },
+    "Creative Commons license family": { 'badge': "CC", 'url': "" },
+    "Creative Commons Zero v1.0 Universal": { 'badge': "CC0-1.0", 'url': "" },
+    "Creative Commons Attribution 4.0": { 'badge': "CC-BY-4.0", 'url': "" },
+    "Creative Commons Attribution ShareAlike 4.0": { 'badge': "CC-BY-SA-4.0", 'url': "" },
+    "Do What The F*ck You Want To Public License": { 'badge': "WTFPL", 'url': "" },
+    "Educational Community License v2.0": { 'badge': "ECL-2.0", 'url': "" },
+    "Eclipse Public License 1.0": { 'badge': "EPL-1.0", 'url': "" },
+    "Eclipse Public License 2.0": { 'badge': "EPL-2.0", 'url': "" },
+    "European Union Public License 1.1": { 'badge': "EUPL-1.1", 'url': "" },
+    "GNU Affero General Public License v3.0": { 'badge': "AGPL-3.0", 'url': "" },
+    "GNU General Public License family": { 'badge': "GPL", 'url': "" },
+    "GNU General Public License v2.0": { 'badge': "GPL-2.0", 'url': "" },
+    "GNU General Public License v3.0": { 'badge': "GPL-3.0", 'url': "" },
+    "GNU Lesser General Public License family": { 'badge': "LGPL", 'url': "" },
+    "GNU Lesser General Public License v2.1": { 'badge': "LGPL-2.1", 'url': "" },
+    "GNU Lesser General Public License v3.0": { 'badge': "LGPL-3.0", 'url': "" },
+    "ISC": { 'badge': "ISC", 'url': "" },
+    "LaTeX Project Public License v1.3c": { 'badge': "LPPL-1.3c", 'url': "" },
+    "Microsoft Public License": { 'badge': "MS-PL", 'url': "" },
+    "MIT": { 'badge': "MIT", 'url': "" },
+    "Mozilla Public License 2.0": { 'badge': "MPL-2.0", 'url': "" },
+    "Open Software License 3.0": { 'badge': "OSL-3.0", 'url': "" },
+    "PostgreSQL License": { 'badge': "PostgreSQL", 'url': "" },
+    "SIL Open Font License 1.1": { 'badge': "OFL-1.1", 'url': "" },
+    "University of Illinois/NCSA Open Source License": { 'badge': "NCSA", 'url': "" },
+    "The Unlicense": { 'badge': "Unlicense", 'url': "" },
+    "zLib License": { 'badge': "Zlib", 'url': "" },
+}
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
@@ -117,11 +162,21 @@ function formatData(data) {
         installation,
         usage,
         license,
+        features,
         contribute,
         tests,
         username,
         email
     } = data;
+
+    let licenseBadge = '';
+
+    if (license == "None") {
+        license = "This project has no license.";
+    } else {
+        licenseBadge = ``;
+        license = `Licensed under the ${license} license.`;
+    }
 
     const formattedString =
         `# ${title}
@@ -130,14 +185,13 @@ function formatData(data) {
 ${description}
 
 ## Table of Contents
-Description
-Table of Contents
-Installation
-Usage
-License
-Contributing
-Tests
-Questions
+- [Installation](#Installation)
+- [Usage](#Usage)
+- [License](#License)
+- [Features](#Features)
+- [Contributing](#Contributing)
+- [Tests](#Tests)
+- [Questions](#Questions)
 
 ## Installation
 ${installation}
@@ -147,6 +201,9 @@ ${usage}
 
 ## License
 ${license}
+
+## Features
+${features}
 
 ## Contributing
 ${contribute}
