@@ -11,8 +11,8 @@ The purpose of this application is to help streamline the process of creating a 
 - [License](#License)
 - [Features](#Features)
 - [Contributing](#Contributing)
-- [Tests](#Tests)
 - [Questions](#Questions)
+- [Video](#Video)
 
 ## Installation
 Clone the repositiory from here https://github.com/KAntBarr/readme-generator-9.
@@ -32,10 +32,10 @@ Parameter options include -h/--help, -t, -d. -h/--help will print out  direction
 ## Contributing
 Pick an open issue to solve, fork the respository, fix the issue with the forked repository, then do a pull request with the original repository. Or donate to our cause.
 
-## Tests
-N/A
-
 ## Questions
 Github Username: KAntBarr - https://github.com/KAntBarr
 
 Reach Me: kobybarr.dev@gmail.com
+
+## Video
+Demonstration link: https://drive.google.com/file/d/1YJsE9g9LIxgPl4vf4XoJmVBby4D_K7HX/view
