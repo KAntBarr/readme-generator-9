@@ -5,14 +5,14 @@
 The purpose of this application is to help streamline the process of creating a README.md file.
 
 ## Table of Contents
-- [Installation](#Installation)
-- [Usage](#Usage)
-- [Credits](#Credits)
-- [License](#License)
-- [Features](#Features)
-- [Contributing](#Contributing)
-- [Questions](#Questions)
-- [Video](#Video)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Credits](#credits)
+- [License](#license)
+- [Features](#features)
+- [Contributing](#contributing)
+- [Questions](#questions)
+- [Video](#video)
 
 ## Installation
 Clone the repositiory from here https://github.com/KAntBarr/readme-generator-9.
