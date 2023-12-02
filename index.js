@@ -208,14 +208,14 @@ ${licenseBadge}
 ${description}
 
 ## Table of Contents
-- [Installation](#Installation)
-- [Usage](#Usage)
-- [Credits](#Credits)
-- [License](#License)
-- [Features](#Features)
-- [Contributing](#Contributing)
-- [Tests](#Tests)
-- [Questions](#Questions)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Credits](#credits)
+- [License](#license)
+- [Features](#features)
+- [Contributing](#contributing)
+- [Tests](#tests)
+- [Questions](#questions)
 
 ## Installation
 ${installation}
