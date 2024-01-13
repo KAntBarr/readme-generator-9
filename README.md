@@ -1,8 +1,8 @@
-# readme-generator-9
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+# text-editor-19
+[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 ## Description
-The purpose of this application is to help streamline the process of creating a README.md file.
+This web application allows the user to create and save documents even while being offline. Not only can this app be ran in the browser, it can be downloaded as a progressive web app. The document is saved as soon as the user clicks off of the window.
 
 ## Table of Contents
 - [Installation](#installation)
@@ -11,31 +11,31 @@ The purpose of this application is to help streamline the process of creating a 
 - [License](#license)
 - [Features](#features)
 - [Contributing](#contributing)
+- [Tests](#tests)
 - [Questions](#questions)
-- [Video](#video)
 
 ## Installation
-Clone the repositiory from here https://github.com/KAntBarr/readme-generator-9.
+Visit this link
 
 ## Usage
-Simply go into the folder that contains the index.js file, run node . or node index.js, and answer a series of questions about your project. A README file will be genereated upon completion. Parameter usage will be mentioned in the features section.
+Visit this link and start typing
 
 ## Credits
-Inquirer v8.2.4 - https://www.npmjs.com/package/inquirer
+test
 
 ## License
-Licensed under the MIT license.
+Licensed under the Apache license 2.0 license.
 
 ## Features
-Parameter options include -h/--help, -t, -d. -h/--help will print out  directions on how to use the application. -t will create the file as README_temp.md, instead of the default, README.md. -d will generate a generic README.md, completely skipping over the survery.
+Have documents be saved while also being offline.
 
 ## Contributing
 Pick an open issue to solve, fork the respository, fix the issue with the forked repository, then do a pull request with the original repository. Or donate to our cause.
+
+## Tests
+N/A
 
 ## Questions
 Github Username: KAntBarr - https://github.com/KAntBarr
 
 Reach Me: kobybarr.dev@gmail.com
-
-## Video
-Demonstration link: https://drive.google.com/file/d/1YJsE9g9LIxgPl4vf4XoJmVBby4D_K7HX/view
